@@ -15,9 +15,9 @@
     <xs:schema version="1.0" targetNamespace="http://ioweuabeer/randomizer/"
                elementFormDefault="qualified">
 
-      <xs:simpleType name="itemList">
+      <xs:complexType name="itemList">
         <xs:list itemType="xs:string" />
-      </xs:simpleType>
+      </xs:complexType>
 
       <xs:element name="items" type="ns1:itemList" />
       <xs:element name="number" type="xs:integer" />
@@ -32,11 +32,11 @@
   -->
   <message name="itemListMessageRequest">
     <part name="elements" element="ns1:itemList" />
-    <part name="returnNumber" element="ns1:number" />
+    <part name="returnNumber" element="xs:integer" />
   </message>
 
   <message name="itemListMessageResponse">
-    <part name="elements" element="ns1:itemList" />
+    <part name="elements" element="xs:list" />
   </message>
 
   <!--
