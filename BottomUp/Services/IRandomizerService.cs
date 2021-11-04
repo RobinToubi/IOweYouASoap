@@ -8,6 +8,6 @@ namespace BottomUp.Services
     public interface IRandomizerService
     {
         [OperationContract]
-        IList<string> GetRandomElement(IList<string> list, int number = 1);
+        IList<string> GetRandomElement(List<string> list, int number = 1);
     }
 }
