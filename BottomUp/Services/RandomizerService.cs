@@ -15,13 +15,11 @@ namespace BottomUp.Services
                 return new List<string>();
             Random random = new((int)DateTime.Now.Ticks);
             var returnedlist = new List<string>();
-            int i = 0;
-            while (number > i)
+            while (number > returnedlist.Count)
             {
                 int selectedIndex = random.Next(0, list.Count);
                 returnedlist.Add(list[selectedIndex]);
                 list.RemoveAt(selectedIndex);
-                i++;
             }
             return returnedlist;
         }
