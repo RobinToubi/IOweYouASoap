@@ -1,0 +1,82 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<definitions
+  xmlns="http://schemas.xmlsoap.org/wsdl/"
+  xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+  xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata"
+  xmlns:tns="http://ioweuabeer/randomizer/"
+  xmlns:xs="http://www.w3.org/2001/XMLSchema"
+  xmlns:ns1="http://ioweuabeer/"
+  targetNamespace="http://ioweuabeer/randomizer/"
+  name="RandomizerService"
+>
+
+  <!-- Les types de données au format XML schema -->
+  <types>
+    <xs:schema version="1.0" targetNamespace="http://ioweuabeer/randomizer/"
+               elementFormDefault="qualified">
+
+      <xs:simpleType name="itemList">
+        <xs:list itemType="xs:string" />
+      </xs:simpleType>
+
+      <xs:element name="items" type="ns1:itemList" />
+      <xs:element name="number" type="xs:integer" />
+
+    </xs:schema>
+  </types>
+
+  <!--
+    La description de tous les messages possibles.
+    Un message est défini par un ensemble de parties (une partie pour le payload
+    et une partie par en-tête)
+  -->
+  <message name="itemListMessageRequest">
+    <part name="elements" element="ns1:itemList" />
+    <part name="returnNumber" element="ns1:number" />
+  </message>
+
+  <message name="itemListMessageResponse">
+    <part name="elements" element="ns1:itemList" />
+  </message>
+
+  <!--
+    Description des interfaces (indépendantes de SOAP)
+    Une interface est composée d'un ensemble d'opérations.
+    Chaque opération est définie par les messages en entrée et en sortie.
+  -->
+  <portType name="RandomizerService">
+    <operation name="randomize">
+      <input
+        wsam:Action="http://ioweuabeer/randomizer/randomize"
+        message="tns:itemListMessageRequest"/>
+      <output
+        wsam:Action="http://ioweuabeer/randomizer/items"
+        message="tns:itemListMessageResponse"/>
+    </operation>
+  </portType>
+
+  <!-- Liaison des interfaces avec le protocole SOAP -->
+  <binding name="RandomizerServicePortBinding" type="tns:RandomizerService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+    <operation name="randomize">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+  </binding>
+
+  <!--
+    Localisation du service
+    Dans le cas d'un binding SOAP avec un transport HTTP, on trouve ici l'URL du service.
+  -->
+  <service name="RandomizerService">
+    <port name="RandomizerServicePort" binding="tns:RandomizerServicePortBinding">
+      <soap:address location="http://ioweuabeer/ws/randomizer"/>
+    </port>
+  </service>
+
+</definitions>
