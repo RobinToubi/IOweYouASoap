@@ -18,7 +18,7 @@ namespace BottomUp
 		public void ConfigureServices(IServiceCollection services)
 		{
 			services.AddSoapCore();
-			services.TryAddSingleton<IRandomizerService, RandomizerService>();
+			services.TryAddSingleton<IRewardService, RewardService>();
 			services.AddMvc();
 		}
 
@@ -27,8 +27,8 @@ namespace BottomUp
 			app.UseRouting();
 
 			app.UseEndpoints(endpoints => {
-				endpoints.UseSoapEndpoint<IRandomizerService>("/ServiceRandomize.svc", new SoapEncoderOptions(), SoapSerializer.DataContractSerializer);
-				endpoints.UseSoapEndpoint<IRandomizerService>("/ServiceRandomize.asmx", new SoapEncoderOptions(), SoapSerializer.XmlSerializer);
+				endpoints.UseSoapEndpoint<IRewardService>("/ServiceReward.svc", new SoapEncoderOptions(), SoapSerializer.DataContractSerializer);
+				endpoints.UseSoapEndpoint<IRewardService>("/ServiceReward.asmx", new SoapEncoderOptions(), SoapSerializer.XmlSerializer);
 			});
 		}
 	}
