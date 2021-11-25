@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.810.11
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IOweYouASoap", "IOweYouASoap\IOweYouASoap.csproj", "{7D401C4C-2DBF-4E69-92D8-247D0B317E32}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IOweYouASoap", "IOweYouASoap\IOweYouASoap.csproj", "{7D401C4C-2DBF-4E69-92D8-247D0B317E32}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BottomUp", "BottomUp\BottomUp.csproj", "{B46D84B7-A70E-449D-ACFE-9189B9C8665C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BottomUp", "BottomUp\BottomUp.csproj", "{B46D84B7-A70E-449D-ACFE-9189B9C8665C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServiceTrophies", "ServiceTrophies\ServiceTrophies.csproj", "{5920146D-14B2-4B26-B6E8-6AFF4584EDBE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{B46D84B7-A70E-449D-ACFE-9189B9C8665C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B46D84B7-A70E-449D-ACFE-9189B9C8665C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B46D84B7-A70E-449D-ACFE-9189B9C8665C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5920146D-14B2-4B26-B6E8-6AFF4584EDBE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5920146D-14B2-4B26-B6E8-6AFF4584EDBE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5920146D-14B2-4B26-B6E8-6AFF4584EDBE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5920146D-14B2-4B26-B6E8-6AFF4584EDBE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
