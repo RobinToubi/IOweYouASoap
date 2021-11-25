@@ -14,12 +14,11 @@ namespace ManageUser
     {
         public static void Main(string[] args)
         {
-            CreateHostBuilder(args).Build().Run();
             for (int i = 1; i < 15; i++)
             {
                 new User("user" + i, "toto");
             }
-
+            CreateHostBuilder(args).Build().Run();
         }
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>

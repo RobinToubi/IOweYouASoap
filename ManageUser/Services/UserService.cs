@@ -12,7 +12,7 @@ namespace ManageUser.Services
         public User CreateUser(string login, string password)
         {
             new User(login, password);
-            return User.listUser[User.lastId - 1];
+            return User.listUser[User.lastId];
         }
 
         public void DeleteUser(int id)
